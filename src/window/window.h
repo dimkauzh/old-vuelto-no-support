@@ -18,6 +18,17 @@ SDL_Window* NewWindow(const char* title, int width, int height) {
     return window;
 }
 
+SDL_Renderer* NewRenderer(SDL_Window* window) {
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
+    if (renderer == NULL) {
+        // Window creation failed
+        printf("Renderer could not be created! SDL_Error: %s\n", SDL_GetError());
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+    }
+    return renderer;
+}
+
 bool Loop(SDL_Window* window) {
     // Main loop flag
     bool quit = true;

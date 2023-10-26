@@ -5,14 +5,24 @@ package window
 // #include <SDL2/SDL.h>
 import "C"
 
-func NewWindow(title string, width, height int) *C.SDL_Window {
-	return C.NewWindow(C.CString(title), C.int(width), C.int(height))
+type Window struct {
+	window   *C.SDL_Window
+	renderer *C.SDL_Renderer
+	title    string
+	width    int
+	height   int
 }
 
-func Loop(window *C.SDL_Window) bool {
-	return bool(C.Loop(window))
+func (w *Window) Loop() bool {
+	return bool(C.Loop(w.window))
 }
 
-func TestLoop(window *C.SDL_Window) {
-	C.TestLoop(window)
+func NewWindow(title string, width, height int) Window {
+	w := C.NewWindow(C.CString(title), C.int(width), C.int(height))
+	r := C.NewRenderer(w)
+	return Window{w, r, title, width, height}
+}
+
+func TestLoop(window Window) {
+	C.TestLoop(window.window)
 }

@@ -9,6 +9,6 @@ func main() {
 	vuelto.Init()
 	win := w.NewWindow("test", 800, 600)
 
-	for w.Loop(win) {
+	for win.Loop() {
 	}
 }
