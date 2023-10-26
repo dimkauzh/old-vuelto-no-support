@@ -1,6 +1,8 @@
 package window
 
+// #cgo LDFLAGS: -lSDL2
 // #include <window.h>
+// #include <SDL2/SDL.h>
 import "C"
 
 func NewWindow(title string, width, height int) *C.SDL_Window {
@@ -9,4 +11,8 @@ func NewWindow(title string, width, height int) *C.SDL_Window {
 
 func Loop(window *C.SDL_Window) bool {
 	return bool(C.Loop(window))
+}
+
+func TestLoop(window *C.SDL_Window) {
+	C.TestLoop(window)
 }

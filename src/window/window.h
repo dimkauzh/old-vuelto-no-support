@@ -4,33 +4,62 @@
 
 
 SDL_Window* NewWindow(const char* title, int width, int height) {
-	SDL_Window* window = SDL_CreateWindow("SDL2 Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_SHOWN);
+	SDL_Window* window = SDL_CreateWindow(title,
+                                       SDL_WINDOWPOS_CENTERED,
+                                       SDL_WINDOWPOS_CENTERED,
+                                       width, height, 0);
     if (window == NULL) {
         // Window creation failed
         printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
         SDL_Quit();
+    } else {
+        SDL_ShowWindow(window);
     }
     return window;
 }
 
 bool Loop(SDL_Window* window) {
     // Main loop flag
-    bool quit = false;
+    bool quit = true;
 
     // Event handler
     SDL_Event e;
 
     // Main loop
-    while (!quit) {
+    while (quit) {
         // Handle events on the queue
-        while (SDL_PollEvent(&e) != 0) {
+        while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) {
-                quit = true;
-                SDL_DestroyWindow(window);
-				SDL_Quit();
+                quit = false;
+            }
+        }
+        return quit;
+    }
+
+    // Destroy window
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    return quit;
+}
+
+void TestLoop(SDL_Window* window) {
+    // Main loop flag
+    bool quit = true;
+
+    // Event handler
+    SDL_Event e;
+
+    // Main loop
+    while (quit) {
+        // Handle events on the queue
+        while (SDL_PollEvent(&e)) {
+            if (e.type == SDL_QUIT) {
+                quit = false;
             }
         }
     }
 
-    return quit;
+    // Destroy window
+    SDL_DestroyWindow(window);
+    SDL_Quit();
 }
