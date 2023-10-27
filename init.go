@@ -16,9 +16,10 @@ import "C"
 import "runtime"
 
 func Init() {
-	runtime.LockOSThread()
-	C.Init()
+    runtime.LockOSThread()
+    C.Init()
 }
 
-func Quit() {
+func ForceQuit() {
+    C.SDL_Quit()
 }

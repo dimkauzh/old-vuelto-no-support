@@ -8,10 +8,10 @@ import (
 func main() {
 	vuelto.Init()
 	win := window.NewWindow("test", 800, 600)
+	image := win.LoadImage("test/test.png")
 
 	for win.Loop() {
-		win.DrawRect(100, 100, 100, 100, [3]int{0, 255, 0})
-		win.DrawRect(200, 300, 100, 100, [3]int{0, 255, 0})
+		image.DrawImage(0, 0, 500, 500)
 
 	}
 }
