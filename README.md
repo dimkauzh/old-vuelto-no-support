@@ -7,14 +7,13 @@
   <a href="https://github.com/dimkauzh/vuelto"><img alt="Lines of code" src="https://tokei.rs/b1/github/dimkauzh/vuelto?category=lines"></a>
 </p>
 
-> **Please note that vertex is currently under high maintenance and is not production-ready.** The project is actively being developed and improved, which is why there is only a `main` branch available. Also this project is not intended to be used in production. It is just a hobby project.
+> **Please note that vuelto is currently under high maintenance and is not production-ready.** The project is actively being developed and improved, which is why there is only a `main` branch available. Also this project is not intended to be used in production. It is just a hobby project.
 
 ## Building
-
 ### Prerequisites
 You need to have the following tools installed:
  - [Go](https://golang.org/dl/)
- - A C compiler
+ - [C compiler](https://developer.fyne.io/started/)
  - [SDL2](https://www.libsdl.org/)
 
 > **warning: our tool only has been tested on MacOS**
