@@ -12,6 +12,6 @@ func main() {
 
 	for win.Loop() {
 		image.DrawImage(0, 0, 500, 500)
-
+		win.DrawRect(600, 200, 200, 200, [3]int{255, 0, 0})
 	}
 }

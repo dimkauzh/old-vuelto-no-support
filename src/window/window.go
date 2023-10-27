@@ -17,6 +17,8 @@ type Window struct {
 
 func (w *Window) Loop() bool {
 	C.SDL_RenderPresent(w.Renderer)
+	C.SDL_SetRenderDrawColor(w.Renderer, 0, 0, 0, 255)
+	C.SDL_RenderClear(w.Renderer)
 	return bool(C.Loop(w.Window))
 }
 
