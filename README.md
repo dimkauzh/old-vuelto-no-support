@@ -16,7 +16,7 @@ You need to have the following tools installed:
  - [C compiler](https://developer.fyne.io/started/)
  - [SDL2](https://www.libsdl.org/)
 
-> **warning: our tool only has been tested on MacOS**
+> **warning: our tool only has been tested on MacOS and one enviorment**
 
 ### Getting the Go package
 Vertex is an ordinary go package, so you can get it using this command:
