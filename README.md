@@ -15,6 +15,8 @@ You need to have the following tools installed:
  - [Go](https://golang.org/dl/)
  - [C compiler](https://developer.fyne.io/started/)
  - [SDL2](https://www.libsdl.org/)
+Without these tools installed you can't use this engine.
+
 
 > **warning: our tool only has been tested on MacOS and one enviorment**
 
