@@ -1,5 +1,5 @@
 <h1 align="center">Vuelto</h1>
-<h3 align="center">A small CGo Software Renderer.</h3>
+<h3 align="center">A small CGo Game Engine that uses a custom Software Renderer.</h3>
 
 <p align="center">
   <a href="https://github.com/dimkauzh/vuelto"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/dimkauzh/vuelto"></a>
