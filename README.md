@@ -15,10 +15,11 @@ You need to have the following tools installed:
  - [Go](https://golang.org/dl/)
  - [C compiler](https://developer.fyne.io/started/)
  - [SDL2](https://www.libsdl.org/)
+
 Without these tools installed you can't use this engine.
 
 
-> **warning: our tool only has been tested on MacOS and one enviorment**
+> **Warning: Our tool only has been tested on MacOS and one environment. If you have any issues, please a Github Issue**
 
 ### Getting the Go package
 Vertex is an ordinary go package, so you can get it using this command:
