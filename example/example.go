@@ -7,7 +7,7 @@ import (
 
 func main() {
 	vuelto.Init()
-	win := window.NewWindow("Vuelto Renderer", 800, 600)
+	win := window.NewWindow("Vuelto", 800, 600)
 
 	for win.Loop() {
 		win.DrawRect(100, 100, 100, 100, [3]int{0, 255, 0})

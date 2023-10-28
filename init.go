@@ -20,6 +20,7 @@ func Init() {
     C.Init()
 }
 
+// Deprecated: This can cause a memory leak. Please use: win.ForceQuit()
 func ForceQuit() {
     C.SDL_Quit()
 }
