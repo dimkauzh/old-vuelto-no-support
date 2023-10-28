@@ -12,6 +12,5 @@ func main() {
 	for win.Loop() {
 		win.DrawRect(100, 100, 100, 100, [3]int{0, 255, 0})
 		win.DrawRect(200, 300, 100, 100, [3]int{0, 255, 0})
-
 	}
 }
