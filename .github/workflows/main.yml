@@ -24,7 +24,7 @@ jobs:
     - name: Build Example
       run: go build -o bin/example example/example.go
 
-  Build_Test1:
+  Build_Test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
