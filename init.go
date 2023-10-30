@@ -14,21 +14,21 @@ void Init() {
 */
 import "C"
 import (
-    "runtime"
+	"runtime"
 
-    "github.com/dimkauzh/vuelto/src"
+	"github.com/dimkauzh/vuelto/src"
 )
 
 func Init() {
-    runtime.LockOSThread()
-    C.Init()
+	runtime.LockOSThread()
+	C.Init()
 }
 
 // Deprecated: This can cause a memory leak. Please use: win.ForceQuit()
 func ForceQuit() {
-    C.SDL_Quit()
+	C.SDL_Quit()
 }
 
 func NewWindow(title string, width, height int) *src.Window {
-    return src.NewWindow(title, width, height)
+	return src.NewWindow(title, width, height)
 }
