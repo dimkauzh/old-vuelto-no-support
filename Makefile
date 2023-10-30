@@ -1,5 +1,5 @@
 VERSION = none
-MESSAGE = "Release $(VERSION)"
+MESSAGE = Release $(VERSION)
 
 .PHONY: release
 
