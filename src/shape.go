@@ -1,4 +1,4 @@
-package window
+package src
 
 type Rect struct {
 	Window *Window

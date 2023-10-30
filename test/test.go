@@ -4,13 +4,11 @@ import (
 	"fmt"
 
 	"github.com/dimkauzh/vuelto"
-	"github.com/dimkauzh/vuelto/src/keys"
-	"github.com/dimkauzh/vuelto/src/window"
 )
 
 func main() {
 	vuelto.Init()
-	win := window.NewWindow("Vuelto Test", 800, 600)
+	win := vuelto.NewWindow("Vuelto Test", 800, 600)
 
 	image := win.LoadImage("test/image.png")
 
@@ -20,11 +18,11 @@ func main() {
 		image.DrawImage(0, 0, 500, 500)
 		win.DrawRect(600, 200, 200, 200, [3]int{255, 0, 0})
 
-		if keys.IsKeyPressed(keys.Key["A"]) {
+		if win.IsKeyPressed(win.Key["A"]) {
 			fmt.Println("A key pressed")
 		}
 
-		if keys.IsKeyPressedOnce(keys.Key["A"]) {
+		if win.IsKeyPressedOnce(win.Key["B"]) {
 			fmt.Println("A key pressed")
 		}
 	}

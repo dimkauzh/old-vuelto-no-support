@@ -26,8 +26,10 @@ Vertex is an ordinary go package, so you can get it using this command:
 ```bash
 go get github.com/dimkauzh/vuelto@latest
 ```
+## Example
+We have a example located at [example/example.go](https://github.com/dimkauzh/vuelto/blob/main/example/example.go)
 
-### Running Examples
+### Running the Example
 1. Open a terminal.
 2. Clone the repo
 ```bash

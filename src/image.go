@@ -1,4 +1,4 @@
-package window
+package src
 
 import (
 	"image"

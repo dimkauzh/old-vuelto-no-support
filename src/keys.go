@@ -1,4 +1,4 @@
-package keys
+package src
 
 /*
 #include <SDL2/SDL.h>
@@ -7,18 +7,23 @@ package keys
 */
 import "C"
 
+type Event struct {
+	Window *Window
+	Key    map[string]C.SDL_Scancode
+}
+
 var keyPressed bool
 
-func IsKeyPressed(key C.SDL_Scancode) bool {
+func (w *Window) IsKeyPressed(key C.SDL_Scancode) bool {
 	return bool(C.IsKeyPressed(key))
 }
 
-func IsKeyPressedOnce(key C.SDL_Scancode) bool {
-	if IsKeyPressed(key) && !keyPressed {
+func (w *Window) IsKeyPressedOnce(key C.SDL_Scancode) bool {
+	if w.IsKeyPressed(key) && !keyPressed {
 		keyPressed = true
 		return true
 	}
-	if !IsKeyPressed(key) {
+	if !w.IsKeyPressed(key) {
 		keyPressed = false
 	}
 	return false

@@ -1,4 +1,4 @@
-package window
+package src
 
 func (w *Window) DrawRect(x, y, width, height int, color [3]int) {
 	for i := x; i < x+width; i++ {

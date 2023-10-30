@@ -1,4 +1,4 @@
-package window
+package src
 
 /*
 #include "window.h"
@@ -12,6 +12,8 @@ type Window struct {
 	Title  string
 	Width  int
 	Height int
+
+	Key map[string]C.SDL_Scancode
 }
 
 func (w *Window) Loop() bool {
@@ -19,8 +21,10 @@ func (w *Window) Loop() bool {
 }
 
 func NewWindow(title string, width, height int) *Window {
-	w := C.NewWindow(C.CString(title), C.int(width), C.int(height))
-	return &Window{w, title, width, height}
+	c_w := C.NewWindow(C.CString(title), C.int(width), C.int(height))
+	w := &Window{c_w, title, width, height, nil}
+	w.Key = Key
+	return w
 }
 
 func (w *Window) SetPixel(x, y int, color [3]int) {

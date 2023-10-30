@@ -1,10 +1,11 @@
 VERSION = none
+MESSAGE = "Release $(VERSION)"
 
 .PHONY: release
 
 release:
 	git add .
-	git commit -m "Release $(VERSION)"
+	git commit -m "$(MESSAGE)"
 	git tag $(VERSION)
 	git push origin $(VERSION)
 

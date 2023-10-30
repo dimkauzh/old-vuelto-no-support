@@ -13,7 +13,11 @@ void Init() {
 }
 */
 import "C"
-import "runtime"
+import (
+    "runtime"
+
+    "github.com/dimkauzh/vuelto/src"
+)
 
 func Init() {
     runtime.LockOSThread()
@@ -23,4 +27,8 @@ func Init() {
 // Deprecated: This can cause a memory leak. Please use: win.ForceQuit()
 func ForceQuit() {
     C.SDL_Quit()
+}
+
+func NewWindow(title string, width, height int) *src.Window {
+    return src.NewWindow(title, width, height)
 }
