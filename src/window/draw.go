@@ -7,3 +7,7 @@ func (w *Window) DrawRect(x, y, width, height int, color [3]int) {
 		}
 	}
 }
+
+func (w *Window) SetBackgroundColor(color [3]int) {
+	w.DrawRect(0, 0, w.Width, w.Height, color)
+}
