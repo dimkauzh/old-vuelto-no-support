@@ -23,7 +23,7 @@ func main() {
 		}
 
 		if win.IsKeyPressedOnce(win.Key["B"]) {
-			fmt.Println("A key pressed")
+			fmt.Println("B key pressed")
 		}
 	}
 }

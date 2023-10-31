@@ -21,10 +21,7 @@ func (w *Window) Loop() bool {
 }
 
 func NewWindow(title string, width, height int) *Window {
-	c_w := C.NewWindow(C.CString(title), C.int(width), C.int(height))
-	w := &Window{c_w, title, width, height, nil}
-	w.Key = Key
-	return w
+	return &Window{C.NewWindow(C.CString(title), C.int(width), C.int(height)), title, width, height, Key}
 }
 
 func (w *Window) SetPixel(x, y int, color [3]int) {

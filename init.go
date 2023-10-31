@@ -24,11 +24,11 @@ func Init() {
 	C.Init()
 }
 
-// Deprecated: This can cause a memory leak. Please use: win.ForceQuit()
-func ForceQuit() {
-	C.SDL_Quit()
-}
-
 func NewWindow(title string, width, height int) *src.Window {
 	return src.NewWindow(title, width, height)
+}
+
+// Deprecated: This can cause a memory leak. Please use: your_window.ForceQuit()
+func ForceQuit() {
+	C.SDL_Quit()
 }
