@@ -14,10 +14,12 @@ type Event struct {
 
 var keyPressed bool
 
+// Checks if certain key is pressed and returns a boolean value.
 func (w *Window) IsKeyPressed(key C.SDL_Scancode) bool {
 	return bool(C.IsKeyPressed(key))
 }
 
+// Checks if certain key is pressed and return a bolean value only once instead of the whole time while being pressed.
 func (w *Window) IsKeyPressedOnce(key C.SDL_Scancode) bool {
 	if w.IsKeyPressed(key) && !keyPressed {
 		keyPressed = true

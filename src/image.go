@@ -14,6 +14,7 @@ type Image struct {
 	Image    image.Image
 }
 
+// Loads a image that you can later draw. Returns a image struct.
 func (w *Window) LoadImage(filename string) Image {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -29,6 +30,7 @@ func (w *Window) LoadImage(filename string) Image {
 	return Image{w, filename, img}
 }
 
+// Function to draw the image that you loaded before.
 func (srcImage *Image) DrawImage(x, y, width, height int) {
 	src := srcImage.Image
 	srcBounds := src.Bounds()
