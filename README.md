@@ -12,22 +12,20 @@
 > **Please note that vuelto is currently under high maintenance and is not production-ready.** The project is actively being developed and improved, which is why there is only a `main` branch available. Also this project is not intended to be used in production. It is just a hobby project.
 
 ## Building
-### Prerequisites
-You need to have the following tools installed:
- - [Go](https://golang.org/dl/)
- - [C compiler](https://developer.fyne.io/started/)
- - [SDL2](https://www.libsdl.org/)
-
-Without these tools installed you can't use this engine.
-
-
-> **Warning: Our tool only has been tested on MacOS and one environment. If you have any issues, please a Github Issue**
-
 ### Getting the Go package
 Vertex is an ordinary go package, so you can get it using this command:
 ```bash
 go get github.com/dimkauzh/vuelto@latest
 ```
+
+### Prerequisites
+You need to have the following tools installed:
+ - [Go](https://golang.org/dl/)
+ - [C compiler](README.md)
+ - [SDL2](https://www.libsdl.org/)
+
+We [have a installation guide here](INSTALLATION.md)
+
 ## Example
 We have a example located at [example/example.go](https://github.com/dimkauzh/vuelto/blob/main/example/example.go)
 
