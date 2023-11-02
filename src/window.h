@@ -45,13 +45,35 @@ void SetPixel(int x, int y, int r, int g, int b) {
     }
 }
 
+void DrawRect(int x, int y, int width, int height, int r, int g, int b) {
+    for (int i = x; i < x + width; i++) {
+        for (int j = y; j < y + height; j++) {
+            SetPixel(i, j, r, g, b);
+        }
+    }
+}
+
+void SetBackgroundColor(int r, int g, int b) {
+    Uint32 clearColor = SDL_MapRGB(SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888), r, g, b);
+
+    for (int i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; i++) {
+        pixelBuffer[i] = clearColor;
+    }
+}
+
+
+void ResetScreen() {
+    SetBackgroundColor(0, 0, 0);
+}
+
 void Update() {
     SDL_UpdateTexture(pixelTexture, NULL, pixelBuffer, SCREEN_WIDTH * sizeof(Uint32));
     SDL_RenderCopy(renderer, pixelTexture, NULL, NULL);
     SDL_RenderPresent(renderer);
 
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
+    ResetScreen();
+
+
 }
 
 void Quit() {
