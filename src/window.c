@@ -5,6 +5,8 @@
 int SCREEN_WIDTH;
 int SCREEN_HEIGHT;
 
+int FPS = 60;
+
 SDL_Texture* pixelTexture;
 Uint32* pixelBuffer;
 
@@ -47,10 +49,23 @@ void ResetScreen() {
     }
 }
 
+void SetFPS(int fps) {
+    FPS = fps;
+}
+
+int GetFPS() {
+    return FPS;
+}
+
+
 void Update() {
     SDL_UpdateTexture(pixelTexture, NULL, pixelBuffer, SCREEN_WIDTH * sizeof(Uint32));
     SDL_RenderCopy(renderer, pixelTexture, NULL, NULL);
     SDL_RenderPresent(renderer);
+
+    SDL_Delay(1000 / FPS);
+
+
 
     ResetScreen();
 }

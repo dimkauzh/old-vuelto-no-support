@@ -13,3 +13,6 @@ bool Loop();
 void SetPixel(int x, int y, int r, int g, int b);
 void DrawRect(int x, int y, int width, int height, int r, int g, int b);
 void SetBackgroundColor(int r, int g, int b);
+
+void SetFPS(int fps);
+int GetFPS();

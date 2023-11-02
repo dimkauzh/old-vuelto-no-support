@@ -28,6 +28,16 @@ func NewWindow(title string, width, height int) *Window {
 	return &Window{C.NewWindow(C.CString(title), C.int(width), C.int(height)), title, width, height, Key}
 }
 
+// Set the fps of your window
+func (w *Window) SetFPS(fps int) {
+	C.SetFPS(C.int(fps))
+}
+
+// Get the fps of your window
+func (w *Window) GetFPS() int {
+	return int(C.GetFPS())
+}
+
 // Force quits your application. This is a safer way to quit a application then vuelto.ForceQuit()
 func (w *Window) ForceQuit() {
 	C.Quit()
