@@ -4,7 +4,7 @@ import (
 	"github.com/dimkauzh/vuelto"
 )
 
-const SPEED = 10
+const SPEED = 5
 
 func main() {
 	vuelto.Init()
