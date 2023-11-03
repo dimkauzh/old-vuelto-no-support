@@ -5,7 +5,7 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
-SDL_Window* NewWindow(const char* title, int width, int height);
+SDL_Window *NewWindow(const char *title, int width, int height);
 void Update();
 void Quit();
 bool Loop();
