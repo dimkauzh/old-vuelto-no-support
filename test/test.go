@@ -16,7 +16,7 @@ func main() {
 		win.SetBackgroundColor([3]int{69, 69, 69})
 		win.DrawRect(600, 200, 200, 200, [3]int{255, 0, 0})
 
-		image.DrawImage(0, 0, 500, 500)
+		image.Draw(0, 0, 500, 500)
 
 		if win.IsKeyPressed(win.Key["A"]) {
 			fmt.Println("A key pressed")
