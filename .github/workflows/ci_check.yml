@@ -22,7 +22,7 @@ jobs:
       run: sudo apt-get install libgl1-mesa-dev xorg-dev libsdl2-dev gcc
 
     - name: Build Example
-      run: go build -o bin/example example/example.go
+      run: go build -o bin/example example/example1/example.go
 
   Build_Test:
     runs-on: ubuntu-latest
