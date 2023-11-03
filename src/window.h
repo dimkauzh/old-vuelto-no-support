@@ -6,6 +6,7 @@
 #include <stdbool.h>
 
 SDL_Window *NewWindow(const char *title, int width, int height);
+void SetIcon(const char *iconPath);
 void Update();
 void Quit();
 bool Loop();

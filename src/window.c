@@ -31,6 +31,8 @@ SDL_Window *NewWindow(const char *title, int width, int height)
         SDL_ShowWindow(win);
     }
 
+    window = win;
+
     renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_SOFTWARE);
     if (renderer == NULL)
     {
@@ -44,6 +46,16 @@ SDL_Window *NewWindow(const char *title, int width, int height)
     pixelBuffer = (Uint32 *)malloc(SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 
     return win;
+}
+
+void SetIcon(const char *iconPath) {
+    SDL_Surface* iconSurface = SDL_LoadBMP(iconPath);
+    if (iconSurface) {
+        SDL_SetWindowIcon(window, iconSurface);
+        SDL_FreeSurface(iconSurface);
+    } else {
+        printf("Failed to load icon: %s\n", SDL_GetError());
+    }
 }
 
 void ResetScreen()
@@ -64,6 +76,13 @@ void SetFPS(int fps)
 int GetFPS()
 {
     return FPS;
+}
+
+void LimitFrameRate(Uint32 frameStartTime) {
+    Uint32 frameTime = SDL_GetTicks() - frameStartTime;
+    if (frameTime < 1000 / FPS) {
+        SDL_Delay((1000 / FPS) - frameTime);
+    }
 }
 
 void Update()
@@ -96,6 +115,8 @@ bool Loop()
 
     while (running)
     {
+        Uint32 frameStartTime = SDL_GetTicks();
+
         while (SDL_PollEvent(&e))
         {
             if (e.type == SDL_QUIT)
@@ -105,6 +126,9 @@ bool Loop()
         }
 
         Update();
+
+        LimitFrameRate(frameStartTime);
+
         return running;
     }
 

@@ -10,6 +10,9 @@ func main() {
 	vuelto.Init()
 	win := vuelto.NewWindow("Vuelto Test", 800, 600)
 
+	win.SetFPS(60)
+	win.SetIcon("test/image.bmp")
+
 	image := win.LoadImage("test/image.png")
 
 	for win.Loop() {

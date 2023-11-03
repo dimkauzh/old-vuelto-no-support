@@ -28,6 +28,11 @@ func NewWindow(title string, width, height int) *Window {
 	return &Window{C.NewWindow(C.CString(title), C.int(width), C.int(height)), title, width, height, Key}
 }
 
+// Set window icon from a BMP image file (only bmp is supported)
+func (w *Window) SetIcon(path string) {
+	C.SetIcon(C.CString(path))
+}
+
 // Set the fps of your window
 func (w *Window) SetFPS(fps int) {
 	C.SetFPS(C.int(fps))
