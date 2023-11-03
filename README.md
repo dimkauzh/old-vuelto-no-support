@@ -16,7 +16,6 @@
 You need to have the following tools installed:
  - [Go](https://golang.org/dl/)
  - [C compiler](README.md)
- - [SDL2](https://www.libsdl.org/)
 
 We [have a installation guide here](INSTALLATION.md)
 

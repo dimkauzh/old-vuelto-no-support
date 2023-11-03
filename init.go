@@ -7,6 +7,7 @@ package vuelto
 #cgo darwin,arm64 LDFLAGS: -lSDL2
 #cgo linux LDFLAGS: -Llib/linux/ -lSDL2
 #cgo windows LDFLAGS: -Llib/windows/ -lSDL2
+#cgo other LDFLAGS: -lSDL2
 
 
 #include <SDL2/SDL.h>
