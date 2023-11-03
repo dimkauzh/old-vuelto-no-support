@@ -23,3 +23,5 @@ go.work
 # Mac cache files
 **.DS_Store
 
+# vscode files
+.vscode
