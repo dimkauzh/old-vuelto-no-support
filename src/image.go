@@ -31,7 +31,7 @@ func (w *Window) LoadImage(filename string) Image {
 }
 
 // Function to draw the image that you loaded before.
-func (srcImage *Image) DrawImage(x, y, width, height int) {
+func (srcImage *Image) Draw(x, y, width, height int) {
 	src := srcImage.Image
 	srcBounds := src.Bounds()
 	srcMinX, srcMinY := srcBounds.Min.X, srcBounds.Min.Y
