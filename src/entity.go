@@ -23,3 +23,13 @@ func (e *Entity) SetImage(image Image) {
 func (e *Entity) SetRect(rect Rect) {
 	e.Rect = &rect
 }
+
+// Draw the image connected to the entity
+func (e *Entity) DrawImage() {
+	e.Image.Draw(e.X, e.Y, e.Width, e.Height)
+}
+
+// Draw the rect connected to the entity
+func (e *Entity) DrawRect() {
+	e.Rect.Draw()
+}

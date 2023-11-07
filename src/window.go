@@ -33,6 +33,12 @@ func (w *Window) SetIcon(path string) {
 	C.SetIcon(C.CString(path))
 }
 
+// This resets everything on your screen. This is also done automatically after
+// the loop is finished and the screen has been refreshed.
+func (w *Window) ResetScreen() {
+	C.ResetScreen()
+}
+
 // Set the fps of your window
 func (w *Window) SetFPS(fps int) {
 	C.SetFPS(C.int(fps))
