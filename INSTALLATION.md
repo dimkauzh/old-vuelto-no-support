@@ -1,4 +1,6 @@
 # Installation
+## Windows
+There is no current support for windows, but you can use WSL to run the program. You can try to install SDL2 by yourself, it will be then linked automatically using the `-lSDL2` flag.
 
 ## MacOS
 Install xcode command line tools:
