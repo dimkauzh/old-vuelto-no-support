@@ -50,7 +50,7 @@ func (w *Window) GetFPS() int {
 }
 
 func (w *Window) CreateDelay(ms int) {
-	C.SDL_Delay(C.int(ms))
+	C.SetDelay(C.int(ms))
 }
 
 // Force quits your application. This is a safer way to quit a application then vuelto.ForceQuit()

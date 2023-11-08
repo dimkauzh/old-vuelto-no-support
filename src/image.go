@@ -50,8 +50,13 @@ func (srcImage *Image) Draw(x, y, width, height int) {
 			}
 
 			srcColor := src.At(srcX, srcY)
-			r, g, b, _ := srcColor.RGBA()
-			srcImage.Window.SetPixel(x+i, y+j, [3]int{int(r >> 8), int(g >> 8), int(b >> 8)})
+
+			// Check if the source pixel is transparent
+			_, _, _, a := srcColor.RGBA()
+			if a > 0 {
+				r, g, b, _ := srcColor.RGBA()
+				srcImage.Window.SetPixel(x+i, y+j, [3]int{int(r >> 8), int(g >> 8), int(b >> 8)})
+			}
 		}
 	}
 }

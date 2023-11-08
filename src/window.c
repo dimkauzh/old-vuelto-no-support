@@ -78,6 +78,12 @@ int GetFPS()
     return FPS;
 }
 
+void SetDelay(int delay)
+{
+    SDL_Delay(delay);
+}
+
+
 void LimitFrameRate(Uint32 frameStartTime) {
     Uint32 frameTime = SDL_GetTicks() - frameStartTime;
     if (frameTime < 1000 / FPS) {
