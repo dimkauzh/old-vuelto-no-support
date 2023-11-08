@@ -9,8 +9,11 @@ const SPEED = 5
 func main() {
 	vuelto.Init()
 	win := vuelto.NewWindow("Vuelto Game Test", 800, 600)
+	//win.RemoveFPSLimit()
 
 	x, y := 0, 0
+
+	image := win.LoadImage("test/coin.png")
 
 	for win.Loop() {
 		win.SetBackgroundColor([3]int{64, 64, 64})
@@ -25,7 +28,7 @@ func main() {
 			x = x + SPEED
 		}
 
-		win.DrawRect(x, y, 50, 50, [3]int{255, 255, 255})
+		image.Draw(x, y, 50, 50)
 
 	}
 }

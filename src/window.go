@@ -49,6 +49,11 @@ func (w *Window) GetFPS() int {
 	return int(C.GetFPS())
 }
 
+// Removes the fps limit, can cause weird issues!
+func (w *Window) RemoveFPSLimit() {
+	C.RemoveFPSLimit()
+}
+
 func (w *Window) CreateDelay(ms int) {
 	C.SetDelay(C.int(ms))
 }

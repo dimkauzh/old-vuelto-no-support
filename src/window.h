@@ -18,4 +18,5 @@ void ResetScreen();
 
 void SetFPS(int fps);
 int GetFPS();
+void RemoveFPSLimit();
 void SetDelay(int delay);

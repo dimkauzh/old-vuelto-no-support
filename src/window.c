@@ -6,6 +6,7 @@ int SCREEN_WIDTH;
 int SCREEN_HEIGHT;
 
 int FPS = 60;
+int FPS_ON = 0;
 
 SDL_Texture *pixelTexture;
 Uint32 *pixelBuffer;
@@ -83,6 +84,10 @@ void SetDelay(int delay)
     SDL_Delay(delay);
 }
 
+void RemoveFPSLimit()
+{
+    FPS_ON = 1;
+}
 
 void LimitFrameRate(Uint32 frameStartTime) {
     Uint32 frameTime = SDL_GetTicks() - frameStartTime;
@@ -91,13 +96,15 @@ void LimitFrameRate(Uint32 frameStartTime) {
     }
 }
 
-void Update()
+void Update(Uint32 frameStartTime)
 {
     SDL_UpdateTexture(pixelTexture, NULL, pixelBuffer, SCREEN_WIDTH * sizeof(Uint32));
     SDL_RenderCopy(renderer, pixelTexture, NULL, NULL);
     SDL_RenderPresent(renderer);
 
-    SDL_Delay(1000 / FPS);
+    if (FPS_ON == 0) {
+        LimitFrameRate(frameStartTime);
+    }
 
     ResetScreen();
 }
@@ -131,9 +138,7 @@ bool Loop()
             }
         }
 
-        Update();
-
-        LimitFrameRate(frameStartTime);
+        Update(frameStartTime);
 
         return running;
     }
