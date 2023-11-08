@@ -153,12 +153,15 @@ void SetPixel(int x, int y, int r, int g, int b)
 
 void DrawRect(int x, int y, int width, int height, int r, int g, int b)
 {
-    for (int i = x; i < x + width; i++)
-    {
-        for (int j = y; j < y + height; j++)
-        {
-            SetPixel(i, j, r, g, b);
+    Uint32 color = SDL_MapRGB(SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888), r, g, b);
+    Uint32* dst = pixelBuffer + y * SCREEN_WIDTH + x;
+
+    for (int i = 0; i < height; i++) {
+        Uint32* row = dst;
+        for (int j = 0; j < width; j++) {
+            row[j] = color;
         }
+        dst += SCREEN_WIDTH;
     }
 }
 
