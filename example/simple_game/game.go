@@ -9,7 +9,6 @@ const SPEED = 5
 func main() {
 	vuelto.Init()
 	win := vuelto.NewWindow("Vuelto Game Test", 800, 600)
-	//win.RemoveFPSLimit()
 
 	x, y := 0, 0
 
@@ -18,13 +17,13 @@ func main() {
 	for win.Loop() {
 		win.SetBackgroundColor([3]int{64, 64, 64})
 
-		if win.IsKeyPressed(win.Key["Up"]) {
+		if win.IsKeyPressed(win.Key["Up"]) || win.IsKeyPressed(win.Key["W"]) {
 			y = y - SPEED
-		} else if win.IsKeyPressed(win.Key["Down"]) {
+		} else if win.IsKeyPressed(win.Key["Down"]) || win.IsKeyPressed(win.Key["S"]) {
 			y = y + SPEED
-		} else if win.IsKeyPressed(win.Key["Left"]) {
+		} else if win.IsKeyPressed(win.Key["Left"]) || win.IsKeyPressed(win.Key["A"]) {
 			x = x - SPEED
-		} else if win.IsKeyPressed(win.Key["Right"]) {
+		} else if win.IsKeyPressed(win.Key["Right"]) || win.IsKeyPressed(win.Key["D"]) {
 			x = x + SPEED
 		}
 
