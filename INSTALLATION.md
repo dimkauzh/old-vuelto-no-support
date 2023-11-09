@@ -1,4 +1,4 @@
-# Project Name - Installation Guide
+# Vuelto - Installation Guide
 
 This guide provides step-by-step instructions for setting up a C compiler and SDL2 library on different operating systems.
 
