@@ -27,7 +27,7 @@ go get github.com/dimkauzh/vuelto@latest
 ```
 
 ## Example
-We have a example located at [example/example.go](example/example1/example.go)
+We have a example located at [example/example1/example.go](example/example1/example.go)
 
 ### Running the Example
 1. Open a terminal.
