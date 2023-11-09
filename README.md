@@ -18,7 +18,7 @@ You need to have the following tools installed:
  - [C compiler](README.md)
  - [SDL2](https://www.libsdl.org/)
 
-We [have a installation guide here](INSTALLATION.md)
+We have a [installation guide here](INSTALLATION.md)
 
 ### Getting the Go package
 Vertex is an ordinary go package, so you can get it using this command:
@@ -27,7 +27,7 @@ go get github.com/dimkauzh/vuelto@latest
 ```
 
 ## Example
-We have a example located at [example/example.go](https://github.com/dimkauzh/vuelto/blob/main/example/example1/example.go)
+We have a example located at [example/example.go](example/example1/example.go)
 
 ### Running the Example
 1. Open a terminal.
