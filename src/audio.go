@@ -31,6 +31,7 @@ func (w *Window) OpenAudioFile(filePath string) AudioPlayer {
 	var format beep.Format
 
 	switch strings.ToLower(filepath.Ext(filePath)) {
+
 	case ".wav":
 		streamer, format, err = wav.Decode(f)
 	case ".mp3":
