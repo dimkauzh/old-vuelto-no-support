@@ -21,7 +21,7 @@ You need to have the following tools installed:
 We have a [installation guide here](INSTALLATION.md)
 
 ### Getting the Go package
-Vertex is an ordinary go package, so you can get it using this command:
+Vuelto is an ordinary go package, so you can get it using this command:
 ```bash
 go get github.com/dimkauzh/vuelto@latest
 ```
