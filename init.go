@@ -29,6 +29,7 @@ type Rect = src.Rect
 type Event = src.Event
 type Image = src.Image
 type Entity = src.Entity
+type AudioPlayer = src.AudioPlayer
 
 // The init function. Run it before all other vuelto functions.
 func Init() {

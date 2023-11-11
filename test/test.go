@@ -12,24 +12,27 @@ func main() {
 
 	//img := win.LoadImage("test/image.png")
 
-	anim := win.NewAnim([]vuelto.Image{win.LoadImage("test/image.png"), win.LoadImage("test/coin.png")})
+	audio := win.OpenAudioFile("test/audio.wav")
+	//defer audio.Close()
 
 	win.SetFPS(60)
 	win.SetIcon("test/image.bmp")
+
+	audio.Start()
 
 	for win.Loop() {
 		win.SetBackgroundColor([3]int{255, 12, 76})
 
 		//img.Draw(0, 0, 100, 100)
 
-		anim.Draw(10, 10, 100, 100)
-
 		if win.IsKeyPressed(win.Key["A"]) {
 			fmt.Println("A key pressed")
+
 		}
 
 		if win.IsKeyPressedOnce(win.Key["B"]) {
 			fmt.Println("B key pressed")
+			audio.Stop()
 		}
 	}
 }
