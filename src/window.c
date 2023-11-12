@@ -14,6 +14,9 @@ Uint32 *pixelBuffer;
 SDL_Window *window;
 SDL_Renderer *renderer;
 
+SDL_Event event;
+
+
 SDL_Window *NewWindow(const char *title, int width, int height)
 {
 
@@ -124,15 +127,13 @@ bool Loop()
 {
     bool running = true;
 
-    SDL_Event e;
-
     while (running)
     {
         Uint32 frameStartTime = SDL_GetTicks();
 
-        while (SDL_PollEvent(&e))
+        while (SDL_PollEvent(&event))
         {
-            if (e.type == SDL_QUIT)
+            if (event.type == SDL_QUIT)
             {
                 running = false;
             }
@@ -179,3 +180,23 @@ void SetBackgroundColor(int r, int g, int b)
         pixelBuffer[i] = clearColor;
     }
 }
+
+// Function to handle events for the button
+bool IsButtonPressed(int x, int y, int width, int height) {
+    if (SDL_PollEvent(&event)) {
+        if (event.type == SDL_MOUSEBUTTONDOWN) {
+            int mouseX, mouseY;
+            SDL_GetMouseState(&mouseX, &mouseY);
+
+            if (mouseX >= x && mouseX <= x + width &&
+                mouseY >= y && mouseY <= y + height) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    return false;
+}
+

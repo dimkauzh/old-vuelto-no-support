@@ -10,20 +10,28 @@ func main() {
 	vuelto.Init()
 	win := vuelto.NewWindow("Vuelto Test", 800, 600)
 
-	//img := win.LoadImage("test/image.png")
+	img := win.LoadImage("test/image.png")
 
-	audio := win.OpenAudioFile("test/audio.wav")
+	button := win.NewButton(100, 100, 100, 100, [3]int{255, 0, 0})
+
+	//audio := win.OpenAudioFile("test/audio.wav")
 	//defer audio.Close()
 
 	win.SetFPS(60)
 	win.SetIcon("test/image.bmp")
 
-	audio.Start()
+	//audio.Start()
 
 	for win.Loop() {
-		win.SetBackgroundColor([3]int{255, 12, 76})
+		win.SetBackgroundColor([3]int{69, 69, 69})
 
-		//img.Draw(0, 0, 100, 100)
+		img.Draw(0, 0, 100, 100)
+
+		button.Draw()
+
+		if button.IsClicked() {
+			fmt.Println("Button clicked")
+		}
 
 		if win.IsKeyPressed(win.Key["A"]) {
 			fmt.Println("A key pressed")
@@ -32,7 +40,6 @@ func main() {
 
 		if win.IsKeyPressedOnce(win.Key["B"]) {
 			fmt.Println("B key pressed")
-			audio.Stop()
 		}
 	}
 }

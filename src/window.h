@@ -5,6 +5,8 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
+
+
 SDL_Window *NewWindow(const char *title, int width, int height);
 void SetIcon(const char *iconPath);
 void Update();
@@ -20,3 +22,5 @@ void SetFPS(int fps);
 int GetFPS();
 void RemoveFPSLimit();
 void SetDelay(int delay);
+
+bool IsButtonPressed(int x, int y, int width, int height);
