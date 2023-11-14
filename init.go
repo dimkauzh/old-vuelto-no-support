@@ -5,7 +5,7 @@ package vuelto
 
 #cgo LDFLAGS: -lSDL2
 
-
+#include <stdio.h>
 #include <SDL2/SDL.h>
 
 void Init() {
